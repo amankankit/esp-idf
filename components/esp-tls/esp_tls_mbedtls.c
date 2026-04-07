@@ -1366,7 +1366,7 @@ static esp_err_t esp_set_atecc608a_pki_context(esp_tls_t *tls, const void *pki)
     }
 #elif CONFIG_ATECC608A_TCUSTOM
     esp_ret = esp_init_atecc608a(CONFIG_ATCA_I2C_ADDRESS);
-    if (ret != ESP_OK) {
+    if (esp_ret != ESP_OK) {
         return ESP_ERR_ESP_TLS_SE_FAILED;
     }
     mbedtls_x509_crt_init(&tls->clientcert);
